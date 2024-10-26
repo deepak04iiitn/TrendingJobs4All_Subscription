@@ -102,7 +102,7 @@ export default function App() {
       const script = document.createElement("script");
       script.src = "https://checkout.razorpay.com/v1/payment-button.js";
       script.async = true;
-      script.setAttribute("data-payment_button_id", "pl_PDjQyf79dZzVdC");
+      script.setAttribute("data-payment_button_id", "pl_PDkFNY2Ejghe6p");
 
       const form = document.getElementById("razorpay-form");
       form?.appendChild(script);
