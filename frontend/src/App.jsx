@@ -100,10 +100,9 @@ export default function App() {
   useEffect(() => {
     if (showPaymentModal) {
       const script = document.createElement("script");
-      script.src = "https://cdn.razorpay.com/static/widget/subscription-button.js";
+      script.src = "https://checkout.razorpay.com/v1/payment-button.js";
       script.async = true;
-      script.setAttribute("data-subscription_button_id", "pl_PDeZk2OQ6o66al");
-      script.setAttribute("data-button_theme", "rzp-dark-standard");
+      script.setAttribute("data-payment_button_id", "pl_PDjQyf79dZzVdC");
 
       const form = document.getElementById("razorpay-form");
       form?.appendChild(script);
@@ -274,19 +273,19 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-3 text-sm text-blue-800">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
-                <span>Initial activation fee of ₹199</span>
+                <span>Activation fee of ₹199/month</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
-                <span>Monthly renewal charge of ₹199</span>
+                <span>Charge based on the duration of subscription</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
-                <span>Subscription until cancelled</span>
+                <span>Non refundable subscription</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
-                <span>Cancel anytime</span>
+                <span>Always eligible for a new subscription</span>
               </div>
             </div>
           </div>
