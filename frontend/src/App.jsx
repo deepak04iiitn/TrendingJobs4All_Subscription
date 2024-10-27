@@ -1,5 +1,5 @@
 import { useState, useEffect, memo } from 'react';
-import { CreditCard, UserCircle, Mail, Briefcase, AlertCircle } from 'lucide-react';
+import { CreditCard, UserCircle, Mail, Briefcase, MessageCircle, Send } from 'lucide-react';
 
 const CancelForm = memo(({ onSubmit, formData, onInputChange }) => (
   <form onSubmit={onSubmit} className="space-y-4">
@@ -144,6 +144,28 @@ export default function App() {
               <p className="text-gray-700">{benefit.text}</p>
             </div>
           ))}
+        </div>
+
+        {/* Telegram Links */}
+        <div className="flex justify-center gap-6 mb-6">
+          <a 
+            href="https://t.me/trendingjobs4all_QA" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+          >
+            <Send className="w-5 h-5 text-blue-600" />
+            <span className="text-blue-600 font-medium">Join Channel</span>
+          </a>
+          <a 
+            href="https://t.me/trendingjobs4all_chat" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+          >
+            <MessageCircle className="w-5 h-5 text-blue-600" />
+            <span className="text-blue-600 font-medium">Chat Group</span>
+          </a>
         </div>
 
         <div className="bg-blue-50 p-4 rounded-xl mb-6">
