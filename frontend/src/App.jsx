@@ -1,46 +1,6 @@
 import { useState, useEffect, memo } from 'react';
 import { CreditCard, UserCircle, Mail, Briefcase, MessageCircle, Send } from 'lucide-react';
 
-const CancelForm = memo(({ onSubmit, formData, onInputChange }) => (
-  <form onSubmit={onSubmit} className="space-y-4">
-    <div>
-      <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
-        Full Name
-      </label>
-      <input
-        id="fullName"
-        required
-        type="text"
-        name="fullName"
-        value={formData.fullName}
-        onChange={onInputChange}
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-        autoComplete="off"
-      />
-    </div>
-    <div>
-      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-        Email
-      </label>
-      <input
-        id="email"
-        required
-        type="email"
-        name="email"
-        value={formData.email}
-        onChange={onInputChange}
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-        autoComplete="off"
-      />
-    </div>
-    <button 
-      type="submit"
-      className="w-full py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-    >
-      Cancel Subscription
-    </button>
-  </form>
-));
 
 const Modal = memo(({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
@@ -146,26 +106,37 @@ export default function App() {
           ))}
         </div>
 
-        {/* Telegram Links */}
+        {/* Telegram Links with Tooltips */}
         <div className="flex justify-center gap-6 mb-6">
-          <a 
-            href="https://t.me/trendingjobs4all_QA" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
-          >
-            <Send className="w-5 h-5 text-blue-600" />
-            <span className="text-blue-600 font-medium">Join Channel</span>
-          </a>
-          <a 
-            href="https://t.me/trendingjobs4all_chat" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
-          >
-            <MessageCircle className="w-5 h-5 text-blue-600" />
-            <span className="text-blue-600 font-medium">Chat Group</span>
-          </a>
+          <div className="relative group">
+            <a 
+              href="https://t.me/trendingjobs4all_QA" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+            >
+              <Send className="w-5 h-5 text-blue-600" />
+              <span className="text-blue-600 font-medium">Join Channel</span>
+            </a>
+            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+              For regular updates join our official channel
+            </div>
+          </div>
+          
+          <div className="relative group">
+            <a 
+              href="https://t.me/trendingjobs4all_chat" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+            >
+              <MessageCircle className="w-5 h-5 text-blue-600" />
+              <span className="text-blue-600 font-medium">Chat Group</span>
+            </a>
+            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+              For any issues/support contact in the chat group
+            </div>
+          </div>
         </div>
 
         <div className="bg-blue-50 p-4 rounded-xl mb-6">
