@@ -56,7 +56,7 @@ export default function App() {
       const script = document.createElement("script");
       script.src = "https://checkout.razorpay.com/v1/payment-button.js";
       script.async = true;
-      script.setAttribute("data-payment_button_id", "pl_PDkFNY2Ejghe6p");
+      script.setAttribute("data-payment_button_id", "pl_PJDvDRsICCNDr5");
 
       const form = document.getElementById("razorpay-form");
       form?.appendChild(script);
@@ -147,7 +147,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm text-blue-800">
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
-              <span>Activation fee of ₹199/month</span>
+              <span>Activation fee of ₹99/month</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
